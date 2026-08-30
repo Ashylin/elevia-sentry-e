@@ -1,0 +1,27 @@
+:root {
+  --elv-black: #000000;
+  --elv-near-black: #07090a;
+  --elv-forest: #163c28;
+  --elv-forest-deep: #0d2418;
+  --elv-forest-bright: #1f5233;
+  --elv-silver-1: #ffffff;
+  --elv-silver-2: #c4c4c4;
+  --elv-silver-3: #6e6e6e;
+  --elv-red: #c1272d;
+  --elv-amber: #f2a93b;
+  --elv-green: #35c46b;
+  --elv-off-white: #f5f3ee;
+  --elv-olive: #5a6b45;
+
+  --elv-chrome-gradient: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #d9d9d9 22%,
+    #8f8f8f 48%,
+    #dedede 62%,
+    #6e6e6e 80%,
+    #ffffff 100%
+  );
+
+  --elv-font: 'Helvetica Neue', Arial, sans-serif;
+}
