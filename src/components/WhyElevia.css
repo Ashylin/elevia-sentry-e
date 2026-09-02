@@ -1,0 +1,61 @@
+.why-elevia {
+  background: rgba(7, 9, 10, 0.7);
+  padding: 14vh 8vw 16vh;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.why-elevia__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.why-elevia__eyebrow {
+  color: var(--elv-silver-2);
+  font-size: 13px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.why-elevia__title {
+  margin: 0 0 8vh;
+  font-size: clamp(28px, 3.6vw, 46px);
+  font-weight: 600;
+  color: var(--elv-off-white);
+  max-width: 700px;
+  line-height: 1.2;
+}
+
+.why-elevia__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.why-elevia__card {
+  background: var(--elv-near-black);
+  padding: 32px;
+}
+
+.why-elevia__card-title {
+  color: var(--elv-off-white);
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.why-elevia__card-body {
+  color: #9a9a9a;
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+@media (max-width: 700px) {
+  .why-elevia__grid {
+    grid-template-columns: 1fr;
+  }
+}
