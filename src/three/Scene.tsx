@@ -22,7 +22,7 @@ export default function Scene() {
 
       <Suspense fallback={null}>
         <SentryDevice />
-        <ContactShadows position={[0, -1.08, 0]} opacity={0.55} scale={6} blur={2.4} far={2} />
+        <ContactShadows position={[0, -1.08, 0]} opacity={0.55} scale={6} blur={2.4} far={2} frames={1} />
       </Suspense>
 
       <OrbitControls

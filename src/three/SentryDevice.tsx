@@ -16,9 +16,11 @@ interface StatusLightProps {
   position: [number, number, number]
   color: string
   intensity: number
+  materialRef?: React.RefObject<THREE.MeshStandardMaterial | null>
+  glowRef?: React.RefObject<THREE.PointLight | null>
 }
 
-function StatusLight({ position, color, intensity }: StatusLightProps) {
+function StatusLight({ position, color, intensity, materialRef, glowRef }: StatusLightProps) {
   return (
     <group position={position} rotation={[Math.PI / 2, 0, 0]}>
       <mesh>
@@ -28,6 +30,7 @@ function StatusLight({ position, color, intensity }: StatusLightProps) {
       <mesh position={[0, 0.018, 0]}>
         <cylinderGeometry args={[0.05, 0.05, 0.02, 24]} />
         <meshStandardMaterial
+          ref={materialRef}
           color={color}
           emissive={color}
           emissiveIntensity={intensity}
@@ -35,7 +38,7 @@ function StatusLight({ position, color, intensity }: StatusLightProps) {
           toneMapped={false}
         />
       </mesh>
-      <pointLight color={color} intensity={intensity * 0.4} distance={0.6} decay={2} />
+      <pointLight ref={glowRef} color={color} intensity={intensity * 0.4} distance={0.6} decay={2} />
     </group>
   )
 }
@@ -101,12 +104,30 @@ function SolarPanel() {
   )
 }
 
+export interface StatusLightRefs {
+  red: React.RefObject<THREE.MeshStandardMaterial | null>
+  amber: React.RefObject<THREE.MeshStandardMaterial | null>
+  green: React.RefObject<THREE.MeshStandardMaterial | null>
+  redGlow: React.RefObject<THREE.PointLight | null>
+  amberGlow: React.RefObject<THREE.PointLight | null>
+  greenGlow: React.RefObject<THREE.PointLight | null>
+}
+
 interface SentryDeviceProps {
   lights?: LightState
   showMount?: boolean
+  lightRefs?: StatusLightRefs
+  brainGlowRef?: React.RefObject<THREE.PointLight | null>
+  brainMaterialRef?: React.RefObject<THREE.MeshStandardMaterial | null>
 }
 
-export default function SentryDevice({ lights = IDLE_LIGHTS, showMount = true }: SentryDeviceProps) {
+export default function SentryDevice({
+  lights = IDLE_LIGHTS,
+  showMount = true,
+  lightRefs,
+  brainGlowRef,
+  brainMaterialRef,
+}: SentryDeviceProps) {
   const group = useRef<THREE.Group>(null)
   const badgeTexture = useMemo(() => getBadgeTexture(), [])
 
@@ -120,7 +141,7 @@ export default function SentryDevice({ lights = IDLE_LIGHTS, showMount = true }:
       )}
 
       {/* main body */}
-      <RoundedBox args={[1.15, 1.55, 0.62]} radius={0.06} smoothness={4} position={[0, 0.15, 0]}>
+      <RoundedBox args={[1.15, 1.55, 0.62]} radius={0.06} smoothness={4} position={[0, 0.15, 0]} frustumCulled={false}>
         <meshStandardMaterial color="#5a6b45" roughness={0.65} metalness={0.15} />
       </RoundedBox>
 
@@ -131,24 +152,50 @@ export default function SentryDevice({ lights = IDLE_LIGHTS, showMount = true }:
       </mesh>
 
       {/* status lights, stacked on front face */}
-      <StatusLight position={[-0.32, 0.62, 0.315]} color="#c1272d" intensity={lights.red} />
-      <StatusLight position={[-0.32, 0.42, 0.315]} color="#f2a93b" intensity={lights.amber} />
-      <StatusLight position={[-0.32, 0.22, 0.315]} color="#35c46b" intensity={lights.green} />
+      <StatusLight
+        position={[-0.32, 0.62, 0.315]}
+        color="#c1272d"
+        intensity={lights.red}
+        materialRef={lightRefs?.red}
+        glowRef={lightRefs?.redGlow}
+      />
+      <StatusLight
+        position={[-0.32, 0.42, 0.315]}
+        color="#f2a93b"
+        intensity={lights.amber}
+        materialRef={lightRefs?.amber}
+        glowRef={lightRefs?.amberGlow}
+      />
+      <StatusLight
+        position={[-0.32, 0.22, 0.315]}
+        color="#35c46b"
+        intensity={lights.green}
+        materialRef={lightRefs?.green}
+        glowRef={lightRefs?.greenGlow}
+      />
 
       {/* siren / speaker grille */}
       <group position={[0.32, 0.42, 0.34]} rotation={[Math.PI / 2, 0, 0]}>
         <SirenGrille />
       </group>
 
-      {/* badge plate */}
+      {/* badge plate — doubles as the on-device "thinking" glow, no cloud icon needed */}
       <mesh position={[0, -0.42, 0.315]}>
         <boxGeometry args={[0.85, 0.16, 0.01]} />
-        <meshStandardMaterial color="#0d1f14" roughness={0.5} metalness={0.3} />
+        <meshStandardMaterial
+          ref={brainMaterialRef}
+          color="#0d1f14"
+          emissive="#35c46b"
+          emissiveIntensity={0}
+          roughness={0.5}
+          metalness={0.3}
+        />
       </mesh>
       <mesh position={[0, -0.42, 0.321]}>
         <planeGeometry args={[0.83, 0.14]} />
         <meshBasicMaterial map={badgeTexture} transparent toneMapped={false} />
       </mesh>
+      <pointLight ref={brainGlowRef} position={[0, 0.15, 0.1]} color="#35c46b" intensity={0} distance={1.2} decay={2} />
 
       <SolarPanel />
     </group>
