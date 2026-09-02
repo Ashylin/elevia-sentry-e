@@ -45,7 +45,7 @@ export default function Footer() {
 
         <div className="footer__bottom">
           <div className="footer__built">By the community. For the community.</div>
-          <div className="footer__copyright">&copy; {new Date().getFullYear()} Elevia. Forest. Nature. People.</div>
+          <div className="footer__copyright">&copy; {new Date().getFullYear()} Elevia. All rights reserved.</div>
         </div>
       </div>
     </footer>
