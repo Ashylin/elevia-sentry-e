@@ -7,7 +7,8 @@ export default function Nav() {
       <div className="nav__inner">
         <EleviaLogo size={30} />
         <nav className="nav__links">
-          <a href="#device">Product</a>
+          <a href="#about">About</a>
+          <a href="#device">Sentry-E</a>
           <a href="#why">Why Sentry-E</a>
           <a href="#pilot">Pilot</a>
           <a href="#contact">Contact</a>
