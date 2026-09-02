@@ -12,7 +12,7 @@ export default function Hero() {
 
       <div className="hero__content">
         <h1 className="hero__title">ELEVIA</h1>
-        <p className="hero__tagline">Forest. Nature. People.</p>
+        <p className="hero__tagline">We build the systems that notice first.</p>
         <p className="hero__category">Safety, sensing, and early-warning technology.</p>
       </div>
 
