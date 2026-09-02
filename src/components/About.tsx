@@ -1,0 +1,42 @@
+import './About.css'
+
+const PILLARS = [
+  {
+    title: 'Community-rooted',
+    body: 'Built with the estate workers, foresters, and villages who live alongside this problem every season — not designed at a distance from it.',
+  },
+  {
+    title: 'Field-first',
+    body: "The Nilgiris is where we test, deploy, and learn. If it doesn't hold up on that terrain, it doesn't ship.",
+  },
+  {
+    title: 'Built to work offline',
+    body: 'No dependency on mobile networks or cloud connectivity — the places that need this most rarely have either.',
+  },
+]
+
+export default function About() {
+  return (
+    <section className="about" id="about">
+      <div className="about__inner">
+        <div className="about__eyebrow">About Elevia</div>
+        <h2 className="about__title">Forest. Nature. People.</h2>
+        <p className="about__lede">
+          Elevia builds low-cost, field-ready technology for the people who share their land with wildlife. We
+          started in the Nilgiris, where elephant movement through tea estates and settlements puts lives, crops,
+          and property at risk every season. Sentry-E is our first product — the beginning of a longer effort to
+          make coexistence with wildlife safer, not just possible.
+        </p>
+
+        <div className="about__pillars">
+          {PILLARS.map((p) => (
+            <div className="about__pillar" key={p.title}>
+              <div className="about__pillar-title">{p.title}</div>
+              <div className="about__pillar-body">{p.body}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

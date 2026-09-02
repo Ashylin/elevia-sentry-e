@@ -1,5 +1,6 @@
 import Nav from './components/Nav'
 import Hero from './components/Hero'
+import About from './components/About'
 import StorySequence from './components/StorySequence'
 import WhySentryE from './components/WhySentryE'
 import Pilot from './components/Pilot'
@@ -12,6 +13,7 @@ function App() {
       <Nav />
       <main>
         <Hero />
+        <About />
         <StorySequence />
         <WhySentryE />
         <Pilot />
