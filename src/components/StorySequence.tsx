@@ -1,5 +1,6 @@
 import { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
+import { Environment, Lightformer } from '@react-three/drei'
 import { useScrollProgress } from '../hooks/useScrollProgress'
 import StoryExperience from '../three/StoryExperience'
 import './StorySequence.css'
@@ -28,7 +29,7 @@ const BEAT_COPY = [
   {
     eyebrow: 'Always Watching',
     title: 'Solar powered. Always on.',
-    body: 'Rugged, weatherproof, and self-sufficient — long battery life and low maintenance built for the terrain of the Nilgiris.',
+    body: 'Rugged, weatherproof, and self-sufficient — long battery life and low maintenance built for tough terrain.',
     flowIndex: -1,
   },
 ]
@@ -58,6 +59,11 @@ export default function StorySequence() {
 
             <Suspense fallback={null}>
               <StoryExperience progressRef={progressRef} onBeatChange={setBeatIndex} />
+              <Environment resolution={128} frames={1}>
+                <Lightformer intensity={2.2} color="#eef2ea" position={[3, 5, 2]} scale={[4, 4, 1]} />
+                <Lightformer intensity={1.4} color="#35c46b" position={[-3, 1, -2]} scale={[3, 3, 1]} />
+                <Lightformer intensity={0.7} color="#ffffff" position={[0, -2, 3]} scale={[5, 2, 1]} form="ring" />
+              </Environment>
             </Suspense>
           </Canvas>
         </div>

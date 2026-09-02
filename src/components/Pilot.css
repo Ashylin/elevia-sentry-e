@@ -1,5 +1,5 @@
 .pilot {
-  background: var(--elv-near-black);
+  background: rgba(7, 9, 10, 0.7);
   padding: 14vh 8vw 16vh;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }

@@ -3,11 +3,11 @@ import './About.css'
 const PILLARS = [
   {
     title: 'Community-rooted',
-    body: 'Built with the estate workers, foresters, and villages who live alongside this problem every season — not designed at a distance from it.',
+    body: 'Built alongside the people who live with this problem every season — not designed at a distance from it.',
   },
   {
     title: 'Field-first',
-    body: "The Nilgiris is where we test, deploy, and learn. If it doesn't hold up on that terrain, it doesn't ship.",
+    body: "Tested in the real conditions this technology has to survive. If it doesn't hold up in the field, it doesn't ship.",
   },
   {
     title: 'Built to work offline',
@@ -22,10 +22,9 @@ export default function About() {
         <div className="about__eyebrow">About Elevia</div>
         <h2 className="about__title">Forest. Nature. People.</h2>
         <p className="about__lede">
-          Elevia builds low-cost, field-ready technology for the people who share their land with wildlife. We
-          started in the Nilgiris, where elephant movement through tea estates and settlements puts lives, crops,
-          and property at risk every season. Sentry-E is our first product — the beginning of a longer effort to
-          make coexistence with wildlife safer, not just possible.
+          Elevia builds low-cost, field-ready technology for people who share their land with wildlife. Sentry-E
+          is the first system we&rsquo;re bringing to life — one part of a longer effort to make coexistence with
+          wildlife safer, not just possible.
         </p>
 
         <div className="about__pillars">

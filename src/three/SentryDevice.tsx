@@ -1,5 +1,6 @@
 import { useMemo, useRef } from 'react'
 import { RoundedBox } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 import { getSolarTexture } from './solarTexture'
 import { getBadgeTexture } from './badgeTexture'
@@ -131,6 +132,14 @@ export default function SentryDevice({
   const group = useRef<THREE.Group>(null)
   const badgeTexture = useMemo(() => getBadgeTexture(), [])
 
+  // subtle idle motion so the device reads as a live product, not a static render
+  useFrame((state) => {
+    if (!group.current) return
+    const t = state.clock.elapsedTime
+    group.current.position.y = Math.sin(t * 0.55) * 0.014
+    group.current.rotation.z = Math.sin(t * 0.35) * 0.012
+  })
+
   return (
     <group ref={group}>
       {showMount && (
@@ -142,13 +151,13 @@ export default function SentryDevice({
 
       {/* main body */}
       <RoundedBox args={[1.15, 1.55, 0.62]} radius={0.06} smoothness={4} position={[0, 0.15, 0]} frustumCulled={false}>
-        <meshStandardMaterial color="#5a6b45" roughness={0.65} metalness={0.15} />
+        <meshStandardMaterial color="#5a6b45" roughness={0.42} metalness={0.35} envMapIntensity={1.1} />
       </RoundedBox>
 
       {/* hinge / seam detail */}
       <mesh position={[0, 0.15, 0.311]}>
         <boxGeometry args={[1.1, 1.5, 0.005]} />
-        <meshStandardMaterial color="#48573a" roughness={0.7} metalness={0.1} />
+        <meshStandardMaterial color="#48573a" roughness={0.5} metalness={0.25} />
       </mesh>
 
       {/* status lights, stacked on front face */}

@@ -10,7 +10,7 @@ export default function Nav() {
           <a href="#about">About</a>
           <a href="#device">Sentry-E</a>
           <a href="#why">Why Sentry-E</a>
-          <a href="#pilot">Pilot</a>
+          <a href="#pilot">Launch</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>

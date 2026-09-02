@@ -11,7 +11,7 @@ const COMPANY_LINKS = [
   { label: 'About Elevia', href: '#about' },
   { label: 'Sentry-E', href: '#device' },
   { label: 'Why Sentry-E', href: '#why' },
-  { label: 'Pilot Program', href: '#pilot' },
+  { label: 'Launch', href: '#pilot' },
 ]
 
 export default function Footer() {
@@ -45,7 +45,6 @@ export default function Footer() {
               <li>
                 <a href="mailto:hello@elevia.in">hello@elevia.in</a>
               </li>
-              <li className="footer__col-static">Nilgiris, Tamil Nadu, India</li>
             </ul>
           </div>
         </div>
@@ -62,7 +61,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <div className="footer__built">Built for the Nilgiris. By the community. For the community.</div>
+          <div className="footer__built">By the community. For the community.</div>
           <div className="footer__copyright">&copy; {new Date().getFullYear()} Elevia. Forest. Nature. People.</div>
         </div>
       </div>

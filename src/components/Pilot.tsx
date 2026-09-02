@@ -2,8 +2,8 @@ import './Pilot.css'
 
 const STEPS = [
   {
-    label: '5–10 nodes',
-    detail: 'Deployed across Nilgiris tea estates',
+    label: 'Field nodes',
+    detail: 'Deployed in real, live conditions',
     icon: (
       <path d="M12 2c-3.87 0-7 3.13-7 7 0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" />
     ),
@@ -47,11 +47,11 @@ export default function Pilot() {
   return (
     <section className="pilot" id="pilot">
       <div className="pilot__inner">
-        <div className="pilot__eyebrow">₹3 Lakh Pilot Plan</div>
-        <h2 className="pilot__title">Prove it in the field before we scale it.</h2>
+        <div className="pilot__eyebrow">Launching Soon</div>
+        <h2 className="pilot__title">Proving it in the field, before it ships.</h2>
         <p className="pilot__lede">
-          A focused first deployment in the Nilgiris — enough nodes, enough real data, and a clear bar for
-          detection accuracy — before Sentry-E goes anywhere near a wider rollout.
+          A focused pilot deployment — real nodes, real data, and a clear bar for detection accuracy — before
+          Sentry-E goes anywhere near a wider rollout.
         </p>
 
         <ol className="pilot__grid">
