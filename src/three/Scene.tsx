@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, ContactShadows } from '@react-three/drei'
+import { OrbitControls, ContactShadows, Environment, Lightformer } from '@react-three/drei'
 import SentryDevice from './SentryDevice'
 
 export default function Scene() {
@@ -23,6 +23,11 @@ export default function Scene() {
       <Suspense fallback={null}>
         <SentryDevice />
         <ContactShadows position={[0, -1.08, 0]} opacity={0.55} scale={6} blur={2.4} far={2} frames={1} />
+        <Environment resolution={128} frames={1}>
+          <Lightformer intensity={2.2} color="#eef2ea" position={[3, 5, 2]} scale={[4, 4, 1]} />
+          <Lightformer intensity={1.4} color="#35c46b" position={[-3, 1, -2]} scale={[3, 3, 1]} />
+          <Lightformer intensity={0.7} color="#ffffff" position={[0, -2, 3]} scale={[5, 2, 1]} form="ring" />
+        </Environment>
       </Suspense>
 
       <OrbitControls

@@ -1,3 +1,5 @@
 main {
-  background: var(--elv-black);
+  position: relative;
+  z-index: 1;
+  background: transparent;
 }
