@@ -1,7 +1,7 @@
 .footer {
   position: relative;
   z-index: 1;
-  background: rgba(13, 36, 24, 0.75);
+  background: rgba(18, 19, 20, 0.85);
   padding: 12vh 8vw 6vh;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
@@ -33,11 +33,6 @@
   max-width: 320px;
 }
 
-.footer__quote em {
-  font-style: normal;
-  color: var(--elv-green);
-}
-
 .footer__col-title {
   color: var(--elv-silver-2);
   font-size: 12px;
@@ -63,37 +58,7 @@
 }
 
 .footer__col-list a:hover {
-  color: var(--elv-green);
-}
-
-.footer__col-static {
-  color: #9aa199;
-  font-size: 14.5px;
-}
-
-.footer__badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  padding-top: 5vh;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  margin-bottom: 4vh;
-}
-
-.footer__badge {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   color: var(--elv-silver-2);
-  font-size: 13px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.footer__badge-icon {
-  width: 18px;
-  height: 18px;
-  fill: var(--elv-green);
 }
 
 .footer__bottom {
@@ -102,6 +67,8 @@
   justify-content: space-between;
   gap: 12px;
   flex-wrap: wrap;
+  padding-top: 5vh;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer__built {

@@ -1,41 +1,39 @@
-.about {
+.mission {
   background: rgba(0, 0, 0, 0.66);
   padding: 14vh 8vw;
 }
 
-.about__inner {
+.mission__inner {
   max-width: 1080px;
   margin: 0 auto;
 }
 
-.about__eyebrow {
-  color: var(--elv-green);
+.mission__eyebrow {
+  color: var(--elv-silver-2);
   font-size: 13px;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   margin-bottom: 14px;
 }
 
-.about__title {
+.mission__title {
   margin: 0 0 24px;
-  font-size: clamp(30px, 4vw, 50px);
+  font-size: clamp(28px, 3.8vw, 46px);
   font-weight: 600;
-  letter-spacing: 0.01em;
-  background: var(--elv-chrome-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--elv-off-white);
+  max-width: 700px;
+  line-height: 1.2;
 }
 
-.about__lede {
+.mission__lede {
   margin: 0 0 8vh;
   max-width: 680px;
-  color: #b9beb6;
+  color: #b8b8b8;
   font-size: clamp(15px, 1.5vw, 18px);
   line-height: 1.65;
 }
 
-.about__pillars {
+.mission__pillars {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
@@ -43,21 +41,21 @@
   padding-top: 6vh;
 }
 
-.about__pillar-title {
+.mission__pillar-title {
   color: var(--elv-off-white);
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
-.about__pillar-body {
-  color: #9aa199;
+.mission__pillar-body {
+  color: #9a9a9a;
   font-size: 14px;
   line-height: 1.6;
 }
 
 @media (max-width: 780px) {
-  .about__pillars {
+  .mission__pillars {
     grid-template-columns: 1fr;
     gap: 28px;
   }

@@ -1,9 +1,9 @@
 import Nav from './components/Nav'
 import Hero from './components/Hero'
-import About from './components/About'
-import StorySequence from './components/StorySequence'
-import WhySentryE from './components/WhySentryE'
-import Pilot from './components/Pilot'
+import ComingSoon from './components/ComingSoon'
+import Mission from './components/Mission'
+import WhyElevia from './components/WhyElevia'
+import Newsletter from './components/Newsletter'
 import Footer from './components/Footer'
 import './App.css'
 
@@ -18,10 +18,10 @@ function App() {
       <Nav />
       <main>
         <Hero />
-        <About />
-        <StorySequence />
-        <WhySentryE />
-        <Pilot />
+        <ComingSoon />
+        <Mission />
+        <WhyElevia />
+        <Newsletter />
       </main>
       <Footer />
     </>
