@@ -107,3 +107,27 @@ p {
     animation: none;
   }
 }
+
+@keyframes elv-gradient-drift {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 45%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero,
+  .coming-soon,
+  .mission,
+  .why-elevia,
+  .newsletter,
+  .footer {
+    animation: none !important;
+    background-position: 50% 50% !important;
+  }
+}
