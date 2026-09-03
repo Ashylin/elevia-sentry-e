@@ -1,7 +1,11 @@
 .footer {
   position: relative;
   z-index: 1;
-  background: rgba(18, 19, 20, 0.85);
+  background-image: radial-gradient(ellipse 60% 60% at 85% 0%, rgba(255, 255, 255, 0.045) 0%, transparent 55%),
+    linear-gradient(180deg, #0b0c0d 0%, #17181a 100%);
+  background-size: 160% 160%, 200% 200%;
+  animation: elv-gradient-drift 60s ease-in-out infinite;
+  animation-delay: -40s;
   padding: 12vh 8vw 6vh;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }

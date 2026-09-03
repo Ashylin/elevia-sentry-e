@@ -1,5 +1,9 @@
 .why-elevia {
-  background: rgba(7, 9, 10, 0.7);
+  background-image: radial-gradient(ellipse 60% 50% at 12% 85%, rgba(255, 255, 255, 0.05) 0%, transparent 58%),
+    linear-gradient(200deg, #070808 0%, #121315 50%, #070809 100%);
+  background-size: 170% 170%, 220% 220%;
+  animation: elv-gradient-drift 50s ease-in-out infinite;
+  animation-delay: -30s;
   padding: 14vh 8vw 16vh;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
