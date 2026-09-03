@@ -8,6 +8,32 @@ const COMPANY_LINKS = [
   { label: 'Contact', href: '#contact' },
 ]
 
+const SOCIAL_LINKS = [
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/eleviaproductions/',
+    icon: (
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.6">
+        <rect x="3" y="3" width="18" height="18" rx="2.5" />
+        <path d="M7.8 10.2v6.2M7.8 7.6v.01" strokeLinecap="round" />
+        <path d="M11.4 16.4v-3.6c0-1.4 1-2.4 2.3-2.4s2.1 1 2.1 2.4v3.6" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M11.4 10.2v6.2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/eleviaproductions/',
+    icon: (
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.6">
+        <rect x="3" y="3" width="18" height="18" rx="5" />
+        <circle cx="12" cy="12" r="3.6" />
+        <circle cx="17" cy="7" r="0.9" fill="currentColor" stroke="none" />
+      </svg>
+    ),
+  },
+]
+
 export default function Footer() {
   return (
     <footer className="footer">
@@ -37,8 +63,16 @@ export default function Footer() {
             <div className="footer__col-title">Get In Touch</div>
             <ul className="footer__col-list">
               <li>
-                <a href="mailto:hello@elevia.in">hello@elevia.in</a>
+                <a href="mailto:eleviaproductions@gmail.com">eleviaproductions@gmail.com</a>
               </li>
+              {SOCIAL_LINKS.map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} target="_blank" rel="noopener noreferrer" className="footer__social-link">
+                    {link.icon}
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

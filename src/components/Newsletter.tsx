@@ -9,7 +9,7 @@ export default function Newsletter() {
     if (!email) return
     const subject = encodeURIComponent('Notify me at launch')
     const body = encodeURIComponent(`Please notify me when Elevia launches.\n\nEmail: ${email}`)
-    window.location.href = `mailto:hello@elevia.in?subject=${subject}&body=${body}`
+    window.location.href = `mailto:eleviaproductions@gmail.com?subject=${subject}&body=${body}`
   }
 
   return (
