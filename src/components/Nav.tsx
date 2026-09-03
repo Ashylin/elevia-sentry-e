@@ -17,13 +17,24 @@ export default function Nav() {
       <div className="nav__inner">
         <EleviaLogo size={30} />
 
-        <nav className="nav__links nav__links--desktop">
-          {LINKS.map((link) => (
-            <a key={link.href} href={link.href}>
-              {link.label}
-            </a>
-          ))}
-        </nav>
+        <div className="nav__right nav__right--desktop">
+          <nav className="nav__links nav__links--desktop">
+            {LINKS.map((link) => (
+              <a key={link.href} href={link.href}>
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          <div className="nav__auth">
+            <button type="button" className="nav__login">
+              Log In
+            </button>
+            <button type="button" className="nav__signup">
+              Sign Up
+            </button>
+          </div>
+        </div>
 
         <button
           type="button"
@@ -43,6 +54,14 @@ export default function Nav() {
             {link.label}
           </a>
         ))}
+        <div className="nav__auth nav__auth--mobile">
+          <button type="button" className="nav__login">
+            Log In
+          </button>
+          <button type="button" className="nav__signup">
+            Sign Up
+          </button>
+        </div>
       </nav>
     </header>
   )
