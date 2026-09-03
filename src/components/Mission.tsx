@@ -1,4 +1,5 @@
 import { useInView } from '../hooks/useInView'
+import VideoBackdrop from './VideoBackdrop'
 import './Mission.css'
 
 const PILLARS = [
@@ -58,6 +59,7 @@ export default function Mission() {
 
   return (
     <section className="mission" id="mission">
+      <VideoBackdrop />
       <div className="mission__inner">
         <div className={`mission__intro${introVisible ? ' is-visible' : ''}`} ref={introRef}>
           <div className="mission__eyebrow">About Elevia</div>

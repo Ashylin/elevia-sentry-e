@@ -121,11 +121,7 @@ p {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .coming-soon,
-  .mission,
-  .why-elevia,
-  .newsletter,
-  .footer {
+  .newsletter {
     animation: none !important;
     background-position: 50% 50% !important;
     background-attachment: scroll !important;

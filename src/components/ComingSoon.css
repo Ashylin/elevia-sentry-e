@@ -1,14 +1,13 @@
 .coming-soon {
-  background-image: radial-gradient(ellipse 65% 50% at 18% 15%, rgba(255, 255, 255, 0.11) 0%, transparent 62%),
-    linear-gradient(150deg, #050506 0%, #1c1e22 50%, #08090a 100%);
-  background-attachment: fixed;
-  background-size: 170% 170%, 230% 230%;
-  animation: elv-gradient-drift 52s ease-in-out infinite;
-  animation-delay: -6s;
+  position: relative;
+  overflow: hidden;
+  background: var(--elv-near-black);
   padding: 14vh 8vw 16vh;
 }
 
 .coming-soon__inner {
+  position: relative;
+  z-index: 1;
   max-width: 720px;
   margin: 0 auto;
   text-align: center;

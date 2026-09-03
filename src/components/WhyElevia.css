@@ -1,15 +1,14 @@
 .why-elevia {
-  background-image: radial-gradient(ellipse 60% 50% at 12% 85%, rgba(255, 255, 255, 0.095) 0%, transparent 58%),
-    linear-gradient(200deg, #060708 0%, #1c1e21 50%, #070809 100%);
-  background-attachment: fixed;
-  background-size: 170% 170%, 220% 220%;
-  animation: elv-gradient-drift 50s ease-in-out infinite;
-  animation-delay: -30s;
+  position: relative;
+  overflow: hidden;
+  background: #070808;
   padding: 14vh 8vw 16vh;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .why-elevia__inner {
+  position: relative;
+  z-index: 1;
   max-width: 1080px;
   margin: 0 auto;
 }
