@@ -1,6 +1,7 @@
 .mission {
-  background-image: radial-gradient(ellipse 60% 50% at 82% 12%, rgba(255, 255, 255, 0.055) 0%, transparent 58%),
-    linear-gradient(200deg, #050607 0%, #0f1012 52%, #060607 100%);
+  background-image: radial-gradient(ellipse 60% 50% at 82% 12%, rgba(255, 255, 255, 0.1) 0%, transparent 58%),
+    linear-gradient(200deg, #050607 0%, #1a1c1f 52%, #060607 100%);
+  background-attachment: fixed;
   background-size: 170% 170%, 220% 220%;
   animation: elv-gradient-drift 58s ease-in-out infinite;
   animation-delay: -18s;

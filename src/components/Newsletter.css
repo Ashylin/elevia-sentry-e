@@ -1,6 +1,7 @@
 .newsletter {
-  background-image: radial-gradient(ellipse 55% 55% at 50% 20%, rgba(255, 255, 255, 0.065) 0%, transparent 60%),
-    linear-gradient(180deg, #050506 0%, #101113 55%, #060607 100%);
+  background-image: radial-gradient(ellipse 55% 55% at 50% 20%, rgba(255, 255, 255, 0.11) 0%, transparent 62%),
+    linear-gradient(180deg, #050506 0%, #1a1c1f 55%, #060607 100%);
+  background-attachment: fixed;
   background-size: 160% 160%, 210% 210%;
   animation: elv-gradient-drift 44s ease-in-out infinite;
   animation-delay: -12s;

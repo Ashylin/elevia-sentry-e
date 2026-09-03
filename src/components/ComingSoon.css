@@ -1,6 +1,7 @@
 .coming-soon {
-  background-image: radial-gradient(ellipse 65% 50% at 18% 15%, rgba(255, 255, 255, 0.06) 0%, transparent 60%),
-    linear-gradient(150deg, #060607 0%, #131417 50%, #08090a 100%);
+  background-image: radial-gradient(ellipse 65% 50% at 18% 15%, rgba(255, 255, 255, 0.11) 0%, transparent 62%),
+    linear-gradient(150deg, #050506 0%, #1c1e22 50%, #08090a 100%);
+  background-attachment: fixed;
   background-size: 170% 170%, 230% 230%;
   animation: elv-gradient-drift 52s ease-in-out infinite;
   animation-delay: -6s;

@@ -121,7 +121,6 @@ p {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero,
   .coming-soon,
   .mission,
   .why-elevia,
@@ -129,5 +128,6 @@ p {
   .footer {
     animation: none !important;
     background-position: 50% 50% !important;
+    background-attachment: scroll !important;
   }
 }
