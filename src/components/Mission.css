@@ -8,6 +8,17 @@
   margin: 0 auto;
 }
 
+.mission__intro {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.mission__intro.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .mission__eyebrow {
   color: var(--elv-silver-2);
   font-size: 13px;
@@ -17,12 +28,34 @@
 }
 
 .mission__title {
-  margin: 0 0 24px;
+  margin: 0 0 22px;
   font-size: clamp(28px, 3.8vw, 46px);
   font-weight: 600;
   color: var(--elv-off-white);
   max-width: 700px;
   line-height: 1.2;
+}
+
+.mission__rule {
+  display: block;
+  width: 64px;
+  height: 2px;
+  margin-bottom: 26px;
+  background: var(--elv-chrome-gradient);
+  background-size: 200% 100%;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.9s cubic-bezier(0.16, 0.8, 0.3, 1) 0.15s;
+}
+
+.mission__intro.is-visible .mission__rule {
+  transform: scaleX(1);
+  animation: mission-rule-sheen 3.6s ease-in-out 1.1s infinite;
+}
+
+@keyframes mission-rule-sheen {
+  0%, 100% { background-position: 0% 0; }
+  50% { background-position: 100% 0; }
 }
 
 .mission__lede {
@@ -41,6 +74,64 @@
   padding-top: 6vh;
 }
 
+.mission__pillar {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease, border-color 0.3s ease, background 0.3s ease;
+  padding: 22px;
+  margin: -22px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+
+.mission__pillar.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mission__pillar:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.mission__pillar-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--elv-silver-4);
+  border-radius: 50%;
+  color: var(--elv-silver-2);
+  margin-bottom: 20px;
+  animation: mission-icon-breathe 5s ease-in-out infinite;
+  transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.mission__pillar:nth-child(2) .mission__pillar-icon {
+  animation-delay: 0.6s;
+}
+
+.mission__pillar:nth-child(3) .mission__pillar-icon {
+  animation-delay: 1.2s;
+}
+
+.mission__pillar-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.mission__pillar:hover .mission__pillar-icon {
+  color: var(--elv-off-white);
+  border-color: var(--elv-silver-2);
+  transform: scale(1.08);
+}
+
+@keyframes mission-icon-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
 .mission__pillar-title {
   color: var(--elv-off-white);
   font-size: 16px;
@@ -52,6 +143,24 @@
   color: #9a9a9a;
   font-size: 14px;
   line-height: 1.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mission__intro,
+  .mission__pillar {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .mission__rule {
+    transform: scaleX(1);
+    animation: none;
+  }
+
+  .mission__pillar-icon {
+    animation: none;
+  }
 }
 
 @media (max-width: 780px) {
