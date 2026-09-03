@@ -61,6 +61,21 @@
   color: var(--elv-silver-2);
 }
 
+.footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.footer__social-link svg {
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+.footer__social-link:hover svg {
+  opacity: 1;
+}
+
 .footer__bottom {
   display: flex;
   align-items: center;
