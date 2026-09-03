@@ -37,7 +37,7 @@ export default function Footer() {
             <div className="footer__col-title">Get In Touch</div>
             <ul className="footer__col-list">
               <li>
-                <a href="mailto:hello@elevia.in">hello@elevia.in</a>
+                <a href="mailto:eleviaproductions@gmail.com">eleviaproductions@gmail.com</a>
               </li>
             </ul>
           </div>
