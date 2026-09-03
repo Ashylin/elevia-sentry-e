@@ -9,6 +9,17 @@
   margin: 0 auto;
 }
 
+.why-elevia__intro {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.why-elevia__intro.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .why-elevia__eyebrow {
   color: var(--elv-silver-2);
   font-size: 13px;
@@ -39,6 +50,80 @@
 .why-elevia__card {
   background: var(--elv-near-black);
   padding: 32px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease, background 0.3s ease;
+  overflow: hidden;
+}
+
+.why-elevia__card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.why-elevia__card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.05) 48%, transparent 66%);
+  background-size: 220% 100%;
+  background-position: 130% 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.why-elevia__card:hover {
+  background: #101112;
+}
+
+.why-elevia__card:hover::before {
+  opacity: 1;
+  animation: why-elevia-sheen 1.1s ease forwards;
+}
+
+@keyframes why-elevia-sheen {
+  from { background-position: 130% 0; }
+  to { background-position: -30% 0; }
+}
+
+.why-elevia__card-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--elv-silver-2);
+  margin-bottom: 18px;
+  animation: why-elevia-icon-drift 6s ease-in-out infinite;
+  transition: color 0.3s ease;
+}
+
+.why-elevia__card:nth-child(2) .why-elevia__card-icon {
+  animation-delay: 0.5s;
+}
+
+.why-elevia__card:nth-child(3) .why-elevia__card-icon {
+  animation-delay: 1s;
+}
+
+.why-elevia__card:nth-child(4) .why-elevia__card-icon {
+  animation-delay: 1.5s;
+}
+
+.why-elevia__card-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.why-elevia__card:hover .why-elevia__card-icon {
+  color: var(--elv-off-white);
+}
+
+@keyframes why-elevia-icon-drift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
 }
 
 .why-elevia__card-title {
@@ -46,12 +131,32 @@
   font-size: 17px;
   font-weight: 600;
   margin-bottom: 10px;
+  position: relative;
 }
 
 .why-elevia__card-body {
   color: #9a9a9a;
   font-size: 14.5px;
   line-height: 1.55;
+  position: relative;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .why-elevia__intro,
+  .why-elevia__card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .why-elevia__card-icon {
+    animation: none;
+  }
+
+  .why-elevia__card:hover::before {
+    animation: none;
+    opacity: 0;
+  }
 }
 
 @media (max-width: 700px) {
