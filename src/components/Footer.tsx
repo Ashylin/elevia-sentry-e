@@ -1,4 +1,5 @@
 import EleviaLogo from './EleviaLogo'
+import VideoBackdrop from './VideoBackdrop'
 import './Footer.css'
 
 const COMPANY_LINKS = [
@@ -37,6 +38,7 @@ const SOCIAL_LINKS = [
 export default function Footer() {
   return (
     <footer className="footer">
+      <VideoBackdrop />
       <div className="footer__inner">
         <div className="footer__columns">
           <div className="footer__col footer__col--brand">

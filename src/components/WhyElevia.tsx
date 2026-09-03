@@ -1,4 +1,5 @@
 import { useInView } from '../hooks/useInView'
+import VideoBackdrop from './VideoBackdrop'
 import './WhyElevia.css'
 
 const VALUES = [
@@ -68,6 +69,7 @@ export default function WhyElevia() {
 
   return (
     <section className="why-elevia" id="why-elevia">
+      <VideoBackdrop />
       <div className="why-elevia__inner">
         <div className={`why-elevia__intro${introVisible ? ' is-visible' : ''}`} ref={introRef}>
           <div className="why-elevia__eyebrow">Why Elevia</div>

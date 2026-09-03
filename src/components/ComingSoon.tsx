@@ -1,8 +1,10 @@
+import VideoBackdrop from './VideoBackdrop'
 import './ComingSoon.css'
 
 export default function ComingSoon() {
   return (
     <section className="coming-soon" id="coming-soon">
+      <VideoBackdrop />
       <div className="coming-soon__inner">
         <div className="coming-soon__eyebrow">Coming Soon</div>
         <h2 className="coming-soon__title">Our first system is almost here.</h2>
